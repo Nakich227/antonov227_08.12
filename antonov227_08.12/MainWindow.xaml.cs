@@ -24,26 +24,20 @@ namespace antonov227_08._12
         {
             InitializeComponent();
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-           
-        }
+       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(priceTextBox.Text, out double pricePerKg))
+            double X = Convert.ToDouble(AA.Text);
+            int N = Convert.ToInt32(BB.Text);
+            double result = 0.0;
+
+            for (int i = 1; i <= N; i++)
             {
-
-                resultTextBlock.Text = "";
-
-
-                for (int kg = 1; kg <= 10; kg++)
-                {
-                    double totalCost = pricePerKg * kg;
-                    resultTextBlock.Text += $"{kg} кг: {totalCost:C}\n";
-                }
+                result += Math.Pow(-1, i - 1) * Math.Pow(X, i) / i;
             }
+
+            TextBlockAnswer.Text = $"ln(1 + {X}) ≈ {result}";
         }
     }
 }
