@@ -49,45 +49,7 @@ namespace antonov227_08._12
 
         private void BtnOK_Click_1(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                int k = -1;
-                int n = Convert.ToInt32(ListBoxData.Items[0]);
-                int max = 0;
-                for (int i = 1; i <= n; i++)
-                {
-                    int m = Convert.ToInt32(ListBoxData.Items[i]);
-                    if (m % 10 == 4 && m % 3 == 0)
-                    {
-                        if (k == -1)
-                        {
-                            max = m;
-                            k = 0;
-                        }
-                        else
-                        {
-                            max = max + m;
-                        }
-                    }
-                }
-                if (k != -1)
-                {
-                    TextBlockAnswer.Text = $"Ответ:\n{max}";
-                    ListBoxData.Items.Add("0");
-                }
-                else
-                {
-                    TextBlockAnswer.Text = $"Ответ:\n Чисел оканчивающихся на 4 нет";
-                }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Введены не корректные данные");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void BtnCancel_Click_1(object sender, RoutedEventArgs e)
