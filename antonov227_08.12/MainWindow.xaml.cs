@@ -27,25 +27,13 @@ namespace antonov227_08._12
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
+            int n = Convert.ToInt32(AA.Text);
+            double a = 1;
+            for(double r = 1; r <=n; r++)
             {
-                double n = Convert.ToDouble(AA.Text[0]);
-                double k = Convert.ToDouble(BB.Text[1]);
-                double b = 0;
-                for (int i = 1; i <= n; i++)
-                {
-                    b += Math.Pow(i, k);
-                }
-                MessageBox.Show($"Ответ: {b}");
+                a = a * r + 1 / r;
             }
-            catch (FormatException)
-            {
-                MessageBox.Show("Введены не корректные данные");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            MessageBox.Show($"{a}");
         }
     }
 }
