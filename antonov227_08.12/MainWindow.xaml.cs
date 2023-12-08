@@ -24,7 +24,6 @@ namespace antonov227_08._12
         {
             InitializeComponent();
         }
-       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
