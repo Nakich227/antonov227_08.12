@@ -80,7 +80,20 @@ namespace antonov227_08._12
                     TextBlockAnswer.Text = $"Ответ:\n Чисел оканчивающихся на 4 нет";
                 }
             }
-
-             }  
+            catch (FormatException)
+            {
+                MessageBox.Show("Введены не корректные данные");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-    }      
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
+}   
+         

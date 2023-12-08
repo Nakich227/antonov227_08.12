@@ -77,7 +77,7 @@ Click="BtnOK_Click_1"/>
 Width="80" Height="24" Margin="3"
 Background="#FF3985B0"
 Foreground="White" IsCancel="True"
-Click="BtnCancel_Click_1"/>
+Click="BtnCancel_Click"/>
             </StackPanel>
         </Grid>
     </Grid>
