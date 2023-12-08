@@ -27,19 +27,23 @@ namespace antonov227_08._12
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            int x = Convert.ToInt32(aa.Text);
-            int y = Convert.ToInt32(ss.Text);
-            int count = 0;
+           
+        }
 
-            for (int i = x; i <= y; i++)
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(priceTextBox.Text, out double pricePerKg))
             {
-                if (i % 2 != 0)
+
+                resultTextBlock.Text = "";
+
+
+                for (int kg = 1; kg <= 10; kg++)
                 {
-                    count++;
+                    double totalCost = pricePerKg * kg;
+                    resultTextBlock.Text += $"{kg} кг: {totalCost:C}\n";
                 }
-                
             }
-            dd.Text = $"Количество нечетных чисел на отрезке [{x},{y}]: {count}";
         }
     }
 }
