@@ -49,29 +49,38 @@ namespace antonov227_08._12
 
         private void BtnOK_Click_1(object sender, RoutedEventArgs e)
         {
-            int a = Convert.ToInt32(ListBoxDataa.Items[0]); 
-            int b = 0;  
-            for (int i = 1; i <= a; i++)
+            try
             {
-                int m = Convert.ToInt32(ListBoxDataa.Items[i]);
-                if (m % 3 == 0 && m % 10 == 4)
+                int k = -1;
+                int n = Convert.ToInt32(ListBoxDataa.Items[0]);
+                int max = 0;
+                for (int i = 1; i <= n; i++)
                 {
-                    b += m;
+                    int m = Convert.ToInt32(ListBoxDataa.Items[i]);
+                    if (m % 10 == 4 && m % 3 == 0)
+                    {
+                        if (k == -1)
+                        {
+                            max = m;
+                            k = 0;
+                        }
+                        else
+                        {
+                            max = max + m;
+                        }
+                    }
+                }
+                if (k != -1)
+                {
+                    TextBlockAnswer.Text = $"Ответ:\n{max}";
+                    ListBoxDataa.Items.Add("0");
+                }
+                else
+                {
+                    TextBlockAnswer.Text = $"Ответ:\n Чисел оканчивающихся на 4 нет";
                 }
             }
-            if (b > 0)
-            {
-                TextBlockAnswer.Text = $"ответ:\n{b}";
-            }
-            else
-            {
-                TextBlockAnswer.Text = $"ответ:\n чисел оканчивающихсяна 4 и кратных 3 нету";
-            }
-        }
 
-        private void BtnCancel_Click_1(object sender, RoutedEventArgs e)
-        {
-            Close();
+             }  
         }
-    }
-}
+    }      
