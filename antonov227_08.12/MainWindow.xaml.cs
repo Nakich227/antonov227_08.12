@@ -92,7 +92,7 @@ namespace antonov227_08._12
 
         private void BtnCancel_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
